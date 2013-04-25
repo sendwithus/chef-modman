@@ -24,6 +24,7 @@ remote_file "#{Chef::Config[:file_cache_path]}/modman-installer" do
 end
 
 bash "Install Modman" do
+	user "vagrant"
 	cwd Chef::Config[:file_cache_path]
 	code <<-EOH
 		./modman-installer
